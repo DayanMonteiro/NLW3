@@ -10,13 +10,30 @@
 #container {
   margin: auto;
 
-  width: 90%;
+  width: min(90%, 112rem);
 }
 
 .location,
 h1,
 .visit p {
   height: 16vh;
+}
+
+#logo {
+  animation-delay: 50ms;
+}
+
+.location {
+  animation-delay: 100ms;
+}
+
+main h1 {
+  animation-delay: 150ms;
+  font-size: clamp(4rem, 8vw, 8.4rem);/*o 1 valor é o minimo, o 2 o ideal, o 3 o máximo*/
+}
+
+.visit p {
+  animation-delay: 200ms;
 }
 
 .visit a {
@@ -35,27 +52,62 @@ h1,
 
   transition: background 2.s;
 
+  animation-delay: 250ms;
 }
 
 .visit a:hover {
     background: #96f696;
-
-#logo {
-  animation-delay: 50ms;
 }
 
-.location {
-  animation-delay: 100ms;
-}
 
+/* desktop version*/
+@media(min-width: 760px){
+  #container {
+    padding: 5rem 2rem;
+    background: url("../images/bg.svg") no-repeat 80% / clamp(30rem, 54vw, 56rem);
+
+
+   
+  }
+
+  header {
+    display: flex; /*deixei as caixas flutuando*/
+    align-items: center; 
+    justify-content: space-between; /*espaçamento entre as caixas*/
+  }
+  .location, h1, .visit p {
+    height: initial;
+    text-align: initial;
+  }
+  .location {
+    text-align: right;
+    font-size: 2.4rem;
+    line-height: 1.5;
+
+  }
 main h1 {
-  animation-delay: 150ms;
+  font-weight: bold;
+  line-height: .88; /*ajusta distanciamento entre as linhas de texto*/
+  margin: clamp(10%, 9vh, 12%) 0 4rem; /*disanciamento do texto entre a logo happy acima do h1 e o paragrafo abaixo -- mais uma vez aplico ao clamp para a margem top pensando em tamanhos diferentes de tela, dessa forma tenho 10% como minimo, 9vh ideial e 12% no máximo*/
+  width: min(300px, 80%);/*prendi o paragrafo no canto esquerdo para anexar a imagem posteriormente ao lado direito dela*/
 }
 
-.visit p {
-  animation-delay: 200ms;
+.visit { /*empurrando o botão para o canto direito*/
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.visit a {
-  animation-delay: 250ms;
+  .visit p {
+    font-size: 2.4rem;
+    line-height: 1.5;
+    width: clamp(20rem, 20 vw, 30rem);
+  }
+
+.visit a { /* para concluir o espaçamento do botão com o paragrafo*/
+  margin: initial;
 }
+
+}
+
+/*32:31 tudo certo*/
