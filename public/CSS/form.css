@@ -60,6 +60,11 @@ fieldset legend {
     padding: 0 1.6rem;
 }
 
+.input-block input:valid,
+.input-block textarea:valid  {
+    border: 1px solid #a1e9c5;
+}
+
 .input-block textarea {
     height: clamp(12rem, 16rem, 24rem);
     resize: vertical;
@@ -93,6 +98,9 @@ fieldset legend {
     display: flex;
     border-radius: 10px;
     padding: .6rem;
+    cursor: pointer;
 }
 
-/*57*/
+
+
+/*01:00:00*/

@@ -22,6 +22,4 @@ L.marker([-22.5052109,-44.1243454], {icon})
   .addTo(map)
   .bindPopup(popup)
 
-
-
-  /*parei em 01:28:27*/ 
+ 
