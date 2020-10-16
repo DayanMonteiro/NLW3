@@ -34,14 +34,34 @@ function addPhotoField() {
     // pegar o container de fotos #images
     const container = document.querySelector('#images')
     // pegar o container para duplicar .new-image
-    const fieldsContainer = document.querySelectorAll('.new-image')
+    const fieldsContainer = document.querySelectorAll('.new-upload')
     // realizar o clone da ultima imagem adicionada
     const newFieldContainer = fieldsContainer[fieldsContainer.length - 1].cloneNode(true)
+  //verificar se  campo esta vazio, se sim não add ao container de imagens
+  const input = newFieldContainer.children[0]
+  if(input.value == "") {
+    return
+  }
+    //limpar o campo antes de add ao container de imagens
+   input.value = ""
     // adicionar o clone ao container de #images
-    container.appendChild()
-
+    container.appendChild(newFieldContainer)
 }
 
+function deleteField(event) {
+  const span = event.currentTarget
+
+  const fieldsContainer = document.querySelectorAll('.new-upload')
+
+  if(fieldsContainer.length < 2){
+    // limpar o valor do campo
+    span.parentNode.children[0].value = ""
+    return
+  }
+  // deletar o campo
+  span.parentNode.remove();
+
+}
 
 
 /*
@@ -50,4 +70,4 @@ L.marker([-22.4773864,-44.1425828], {icon})
   .addTo(map)
   .bindPopup(popup)*/
 
-/* 1:26:00 aula 03 */
+/* 1:41:00 aula 03 */
