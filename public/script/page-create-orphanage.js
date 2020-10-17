@@ -63,11 +63,17 @@ function deleteField(event) {
 
 }
 
-
-/*
-// creat and add marker
-L.marker([-22.4773864,-44.1425828], {icon})
-  .addTo(map)
-  .bindPopup(popup)*/
-
-/* 1:41:00 aula 03 */
+// selecionar sim ou não
+function toggleSelect(event) {
+  // retirar a class .active (ds botões)
+  document.querySelectorAll('.button-select button')
+  .forEach(button => button.classList.remove('active'))
+  //colocar a class .active nesse botão clicado
+  const button = event.currentTarget
+  button.classList.add('active')
+  // atualizar o meu input hidden com o valor selecionado
+  const input = document.querySelector('[name="open_on_weekends"]')
+  // verificar se sim ou não
+  input.value = button.dataset.value
+}
+/* finalizada aula 03 */
